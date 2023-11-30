@@ -1,10 +1,10 @@
 from absurdriotwrapper import AbsurdRiotWrapper
+from absurdriotwrapper import AbsurdLolWrapper
 
-riot_wrapper = AbsurdRiotWrapper('lol-you-thought')
+lol_wrapper = AbsurdLolWrapper("your-api-key")
 
-my_region = 'euw1'
+my_region = "euw1"
 
-me = riot_wrapper.account.by_riot_id(my_region, "Hisatsuka", "GTR")
+my_summoner = lol_wrapper.summoner.by_name(my_region, "Hisatsuka")
 
-# CET ENDPOINT FONCTIONNE PAS ISSOU
-print(me.json())
+print(my_summoner.json())

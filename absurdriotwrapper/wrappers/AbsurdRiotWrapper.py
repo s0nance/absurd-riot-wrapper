@@ -1,5 +1,5 @@
-from .apis import BaseApi
-from .apis.riot import AccountApiV1
+from absurdriotwrapper.apis import BaseApi
+from absurdriotwrapper.apis.riot import AccountApiV1
 
 
 class AbsurdRiotWrapper:

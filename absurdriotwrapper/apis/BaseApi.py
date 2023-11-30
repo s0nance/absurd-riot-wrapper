@@ -1,4 +1,5 @@
 import requests.sessions
+import logging
 
 
 class BaseApi:
@@ -16,11 +17,21 @@ class BaseApi:
     def api_key(self):
         return self.api_key
 
-    def request(self, url: str, endpoint: str, method: str, region: str):
-        extra = {}
+    def request(
+        self, url: str, endpoint: str, method: str, region: str, query_params: dict
+    ):
+        query_params = {k: v for k, v in query_params.items() if v is not None}
 
-        response = self._session.get(
-            url, headers={"X-Riot-Token": self._api_key}, **extra
-        )
+        response = None
+
+        if response is None:
+            extra = {}
+
+            response = self._session.get(
+                url,
+                params=query_params,
+                headers={"X-Riot-Token": self._api_key},
+                **extra
+            )
 
         return response
