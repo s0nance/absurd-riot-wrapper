@@ -8,12 +8,6 @@ class FormattedEndpoint:
         self._base_api = base_api
         self._endpoint = endpoint
 
-    def _request_endpoint(
-            self, method: str, region: str, endpoint: Endpoint, **kwargs
-    ):
+    def _request_endpoint(self, method: str, region: str, endpoint: Endpoint, **kwargs):
         url, query = endpoint(platform=region, **kwargs)
-        return self._base_api.request(
-            url,
-            self._endpoint,
-            method,
-            region)
+        return self._base_api.request(url, self._endpoint, method, region)

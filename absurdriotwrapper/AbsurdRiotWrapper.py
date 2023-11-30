@@ -8,10 +8,7 @@ class AbsurdRiotWrapper:
     Base interaction point to access riot apis.
     """
 
-    def __init__(
-            self,
-            api_key: str
-    ):
+    def __init__(self, api_key: str):
         """
         Initialize a new instance of the AbsurdRiotWrapper
 

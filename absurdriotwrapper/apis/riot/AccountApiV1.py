@@ -13,5 +13,9 @@ class AccountApiV1(FormattedEndpoint):
 
     def by_riot_id(self, region: str, game_name: str, tag_line: str):
         return self._request_endpoint(
-            self.by_riot_id.__name__, region, AccountApiV1Urls.by_riot_id, game_name=game_name, tag_line=tag_line
+            self.by_riot_id.__name__,
+            region,
+            AccountApiV1Urls.by_riot_id,
+            game_name=game_name,
+            tag_line=tag_line,
         )
