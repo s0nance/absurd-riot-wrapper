@@ -15,7 +15,7 @@ class BaseApi:
 
     @property
     def api_key(self):
-        return self.api_key
+        return self._api_key
 
     def request(
         self, url: str, endpoint: str, method: str, region: str, query_params: dict
